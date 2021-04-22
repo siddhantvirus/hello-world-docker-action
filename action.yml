@@ -1,0 +1,15 @@
+name: "Hello World"
+description: "Learn creating GitHub Actions and create first hello world action!"
+inputs:
+  name-of-user: 
+    description: 'Who to greet'
+    required: true
+    default: 'siddhant.virus'
+outputs: 
+  time: 
+    description: 'Current Time!'
+runs: 
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+   - ${{ inputs.name-of-user }}
